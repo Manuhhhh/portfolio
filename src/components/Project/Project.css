@@ -1,0 +1,99 @@
+.project-container {
+    background-color: #302f44;
+    width: 400px;
+    height: 350px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.project-presentation {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.247);
+    backdrop-filter: blur(3px);
+    top: 0;
+    z-index: 4;
+    left: 0;
+}
+
+.project-presentation-content {
+    background-color: #302f44;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    position: fixed;
+    height: 400px;
+    width: 800px;
+}
+
+.project-presentation-content-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    min-height: 100%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 10px; /* Width of the scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1); /* Track color */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.3); /* Thumb color */
+        border-radius: 5px; /* Border radius of the thumb */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.5); /* Thumb color on hover */
+    }
+}
+
+.project-title {
+    z-index: 1;
+}
+
+.project-image {
+    height: 80%;
+    z-index: 0;
+    align-self: center;
+}
+
+.project-description {
+    margin-top: 5px;
+    color: white;
+}
+
+.project-presentation-content h1 {
+    color: white;
+    align-self: center;
+}
+
+.project-presentation-content p {
+    &:nth-child(1) {
+        margin: 10px;
+    }
+    color: white;
+}
+
+.project-presentation-content img {
+    max-width:75%;
+    align-self: center;
+}
+
+.show {
+    display: block !important;
+}
+
+.close-btn {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 10px;
+    right: 15px;
+}

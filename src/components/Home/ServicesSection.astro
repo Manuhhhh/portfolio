@@ -1,0 +1,302 @@
+<section id="services">
+  <h1>Mis Servicios</h1>
+  <div class="services-wrapper">
+    <div class="services-wrapper-container">
+      <input type="radio" name="slide" id="c1" default-checked />
+      <label html-for="c1" class="services-wrapper-card">
+        <div class="services-wrapper-row">
+          <div class="services-wrapper-icon-container">
+            <div class="services-wrapper-icon">1</div>
+          </div>
+          <div class="services-wrapper-description">
+            <h4>Desarrollo de Software y Scripts</h4>
+            <p>
+              Analizando la intención de mi cliente, determino soluciones
+              innovadoras y eficientes en forma de código.
+            </p>
+          </div>
+        </div>
+      </label>
+      <input type="radio" name="slide" id="c2" />
+      <label html-for="c2" class="services-wrapper-card">
+        <div class="services-wrapper-row">
+          <div class="services-wrapper-icon-container">
+            <div class="services-wrapper-icon">2</div>
+          </div>
+          <div class="services-wrapper-description">
+            <h4>Gestión de proyectos</h4>
+            <p>
+              Desde la planificación inicial hasta la entrega final, priorizo
+              una gestión efectiva del proceso de materialización de la idea del
+              cliente.
+            </p>
+          </div>
+        </div>
+      </label>
+      <input type="radio" name="slide" id="c3" />
+      <label html-for="c3" class="services-wrapper-card">
+        <div class="services-wrapper-row">
+          <div class="services-wrapper-icon-container">
+            <div class="services-wrapper-icon">3</div>
+          </div>
+          <div class="services-wrapper-description">
+            <h4>Desarrollo web</h4>
+            <p>
+              Transformo tus ideas en sitios web cautivadores y funcionales con
+              enfoque personalizado y tecnologías modernas.
+            </p>
+          </div>
+        </div>
+      </label>
+      <input type="radio" name="slide" id="c4" />
+      <label html-for="c4" class="services-wrapper-card">
+        <div class="services-wrapper-row">
+          <div class="services-wrapper-icon-container">
+            <div class="services-wrapper-icon">4</div>
+          </div>
+          <div class="services-wrapper-description">
+            <h4>Comunicación efectiva</h4>
+            <p>
+              Busco comunicar de la forma mas clara y precisa, para poder
+              cumplir con las expectativas del cliente y realizar trabajos de
+              los que poder estar satisfecho.
+            </p>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</section>
+
+<style>
+  #services {
+    background-color: #3f3d56;
+    overflow-x: hidden;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px 0px;
+
+    h1 {
+      color: #ee8325;
+      font-size: 5rem;
+      margin-bottom: 2%;
+      text-decoration: underline;
+      text-decoration-color: #cacaca;
+      text-decoration-style: dashed;
+      text-decoration-thickness: 17px;
+    }
+  }
+
+  .show-services-wrapper {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    will-change: transform;
+  }
+
+  .services-wrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .services-wrapper-container {
+    transition: transform 1s ease 0.3s;
+    transform: translateX(120vw);
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  .services-wrapper-card {
+    width: 80px;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+  }
+
+  .services-wrapper-card > .services-wrapper-row {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .services-wrapper-card
+    > .services-wrapper-row
+    > .services-wrapper-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .services-wrapper-icon {
+      background-color: #ee8325;
+      user-select: none;
+      color: #;
+      border-radius: 50%;
+      width: 50px !important;
+      height: 50px;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      align-items: center;
+      margin: 15px;
+    }
+  }
+
+  .services-wrapper-card
+    > .services-wrapper-row
+    > .services-wrapper-description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: inherit;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: 0.3s;
+    transition: 0.3s ease;
+  }
+
+  .services-wrapper-description p {
+    color: #fffffcff;
+    padding-top: 5px;
+    width: auto; /* Establecer el ancho máximo */
+    text-wrap: pretty;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    b {
+      color: #fffffcff;
+    }
+  }
+
+  .services-wrapper-description h4 {
+    color: #fffffcff;
+    text-transform: uppercase;
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + .services-wrapper-card .services-wrapper-description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  input:hover + .services-wrapper-card .services-wrapper-description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .services-wrapper-card[for="c1"] {
+    background-image: url("../../assets/images/else/programming.jpg");
+  }
+  .services-wrapper-card[for="c2"] {
+    background-image: url("../../assets/images/else/management.jpg");
+  }
+  .services-wrapper-card[for="c3"] {
+    background-image: url("../../assets/images/else/web.jpg");
+  }
+  .services-wrapper-card[for="c4"] {
+    background-image: url("../../assets/images/else/comunication.jpg");
+  }
+
+  @media screen and (min-width: 1081px) {
+    input:checked + label {
+      width: 750px;
+    }
+    input:hover + label {
+      transform: translateY(-4%);
+    }
+    .services-wrapper-description p {
+      width: 670px;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    #services h1 {
+      font-size: 4rem;
+      text-decoration-thickness: 14px;
+    }
+
+    .services-wrapper-card {
+      align-self: stretch;
+      transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+      background-size: cover;
+      background-position: center;
+      margin: 2%;
+      width: auto;
+      height: 80px;
+    }
+
+    .services-wrapper-container {
+      height: auto;
+      flex-direction: column;
+    }
+
+    .services-wrapper {
+      flex-direction: column;
+      align-self: flex-start;
+    }
+
+    input:checked + label {
+      height: 40vh;
+    }
+
+    .services-wrapper-description p {
+      padding-top: 5px;
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .services-wrapper-description p {
+      font-size: 1rem;
+    }
+
+    #services h1 {
+      text-decoration-thickness: 10px;
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 475px) {
+    .services-wrapper-description h4 {
+      font-size: 0.9rem;
+    }
+
+    .services-wrapper-description p {
+      font-size: 0.8rem;
+    }
+    #services h1 {
+      text-decoration-thickness: 8px;
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .services-wrapper-description h4 {
+      font-size: 0.6rem;
+    }
+
+    .services-wrapper-description p {
+      font-size: 0.5rem;
+      font-weight: 500;
+    }
+  }
+</style>

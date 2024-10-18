@@ -1,0 +1,125 @@
+<section id="main">
+  <div class="front">
+    <div class="front-text">
+      <h4 class="front-title">Manuel Badilla Bustelo</h4>
+      <p>Desarrollador de páginas web y software</p>
+    </div>
+    <img alt="Web developer" id="dev" src="/web_developer.svg" />
+  </div>
+</section>
+
+<style>
+  #main {
+    background: rgb(255, 255, 252);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    display: flex;
+    background-position: center top;
+    height: 100dvh;
+    background-color: var(--baby-powder);
+    overflow: hidden;
+  }
+
+  .front {
+    margin: 5%;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    #dev {
+      width: 30%;
+    }
+  }
+
+  .front-title {
+    color: var(--gris-azulado-extra);
+    font-size: 4em;
+    font-family: "Poppins", sans-serif;
+    text-decoration: underline;
+    text-decoration-color: #cacaca;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 5px;
+  }
+
+  .front-description {
+    color: #3f3d56;
+    font-family: "Poppins", sans-serif;
+    font-size: 2em;
+    text-wrap: pretty;
+    max-width: 750px;
+  }
+
+  @media screen and (max-width: 1546px) {
+    .front-title {
+      font-size: 2.6em;
+    }
+
+    .front-description {
+      font-size: 1.8em;
+    }
+  }
+
+  @media screen and (max-width: 1350px) {
+    .front-title {
+      font-size: 2.6em;
+    }
+
+    .front-description {
+      font-size: 1.8em;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .front-title {
+      font-size: 2rem;
+    }
+
+    .front-description {
+      font-size: 1.6rem;
+    }
+
+    #dev {
+      height: 40vh;
+      max-width: 80%;
+      width: auto !important;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .front-title {
+      font-size: 1.5rem;
+    }
+
+    .front-description {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .front-title {
+      font-size: 1.2rem;
+    }
+
+    .front-description {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media screen and (max-height: 550px) {
+    .front {
+      margin-top: 58px;
+      margin-bottom: 0;
+    }
+
+    .front-title {
+      font-size: 1.4rem;
+    }
+
+    .front-description {
+      font-size: 1rem;
+    }
+  }
+</style>

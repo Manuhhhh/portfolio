@@ -1,0 +1,204 @@
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const headerButtons = document.querySelectorAll(".list-header-element");
+    headerButtons.forEach((button, index) => {
+      console.log(button);
+      setTimeout(
+        () => {
+          button.classList.add("show-button");
+        },
+        index * 100 + 500
+      );
+    });
+  });
+</script>
+
+<header id="header">
+  <input type="checkbox" class="open-menu" />
+  <nav>
+    <ul class="header-links">
+      <li class="home list-header-element">
+        <button class="head-button">Inicio</button>
+      </li>
+      <li class="services list-header-element">
+        <button class="head-button">Servicios</button>
+      </li>
+      <li class="about-me list-header-element">
+        <button class="head-button">Acerca de mí</button>
+      </li>
+      <li class="portfolio list-header-element">
+        <a class="head-button" href="">Portfolio</a>
+      </li>
+      <li class="contact list-header-element">
+        <a class="head-button" href="">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    padding: 0px;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #3f3d56;
+
+    nav ul li {
+      transform: translateY(-10%);
+      opacity: 0;
+      z-index: 1;
+      .head-button {
+        background: none;
+        border: none;
+        color: #fffcff;
+        display: inline-block;
+        position: relative;
+        font-size: medium;
+        text-wrap: nowrap;
+      }
+      .head-button:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #ee8325;
+        transform-origin: bottom right;
+        transition: transform 0.2s ease-out;
+      }
+      .head-button:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+
+  .options {
+    display: none;
+  }
+
+  .show-selector {
+    display: flex;
+    flex-direction: column;
+    button {
+      background: none;
+      color: #fffcff;
+      border: none;
+      outline: none;
+      padding: 7px 0;
+
+      &:hover {
+        background-color: #3f3d56;
+      }
+    }
+  }
+
+  .header-links {
+    list-style-type: none;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+
+    li > a {
+      font-size: 1.2rem;
+      user-select: none;
+      text-decoration: none;
+      font-weight: 300;
+
+      &:hover {
+        will-change: text-shadow;
+        transition: 0.3s ease-in;
+      }
+    }
+
+    li > button {
+      font-weight: 300;
+    }
+  }
+
+  .open-menu {
+    display: none;
+    position: fixed;
+    top: 0px;
+    right: -58px;
+    transform: translateX(58px);
+  }
+
+  .open-menu::after {
+    content: "";
+    position: fixed;
+    top: 0px;
+    right: 58px;
+    width: 40px;
+    height: 40px;
+    background: url(../../assets/images/svg/menu.svg);
+    background-size: cover;
+    margin: 9px;
+    z-index: 1;
+    display: flex;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .show-menu {
+      transform: translateX(0);
+    }
+
+    .header-links {
+      gap: 5%;
+    }
+
+    header {
+      height: 58px;
+      nav {
+        transform: translateX(100%);
+        transition: transform 0.5s ease-out;
+        position: fixed;
+        display: flex;
+        height: 100%;
+        right: 0;
+        background-color: #3f3d56;
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+
+        ul {
+          flex-direction: column;
+
+          li {
+            .head-button {
+              font-size: 2rem !important;
+            }
+          }
+        }
+      }
+
+      .open-menu {
+        transform: translateX(0);
+        display: block;
+        z-index: 1;
+      }
+
+      .open-menu:checked + nav {
+        transform: translateX(0);
+      }
+    }
+
+    .show-selector {
+      button {
+        font-size: 1.4rem;
+      }
+    }
+    .lang-button {
+      font-size: 1.7rem;
+    }
+  }
+
+  .show-button {
+    transition: 0.2s ease-in 0.6s;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+</style>

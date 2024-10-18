@@ -1,0 +1,125 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--gris-azulado-extra);
+
+    /* Paleta de colores */
+    --gris-azulado-extra:#3f3d56;
+    --black: #000000ff;
+    --baby-powder: #fffffcff;
+    --orange-wheel: #ee8325;
+    --anaranjado-amarillento: rgb(255, 191, 73);
+}
+
+.form-container {
+    background-color: #ffffff1e;
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+    opacity: 0;
+    margin: auto;
+    transform: translateY(10%);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    padding: 20px 10px;
+}
+
+
+
+.show-form {
+    opacity: 1;
+    transform: none;
+    transition: 1s ease;
+}
+
+.input {
+    display: flex;
+    font-size: 1rem;
+    min-height: 40px;
+    border-radius: .5rem;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    min-width: 100px;
+}
+
+.form-contact-row1 {
+    display: flex;
+    gap: 10px;
+}
+
+.form-contact-message {
+    padding-top: 10px;
+    height: 100%;
+    resize: none;
+}
+
+.form-contact-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--orange-wheel);
+    text-decoration: underline;
+    text-decoration-color: #CACACA;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 5px;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, .7);
+}
+
+.form-contact-send {
+    grid-area: enviar;
+    font-size: 1rem;
+    min-height: 40px;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    min-width: 100px;
+    padding: 0 40px;
+    background-color: var(--orange-wheel);
+    color: var(--baby-powder);
+    justify-self: end;
+
+    &:hover {
+        background-color: var(--anaranjado-amarillento);
+    }
+}
+
+h2 {
+    font-size: 1rem;
+    user-select: none;
+    background: none;
+    border: none;
+    display: inline-block;
+    position: relative;
+    font-size: medium;
+    text-wrap: nowrap;
+    color: var(--baby-powder);
+}
+
+.form-contact-container {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+    height: 100%;
+}
+
+@media screen and (max-height: 480px) {
+
+    form {
+        height: auto;
+    }
+
+    .form-container {
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form-contact-title {
+        font-size: 6vw;
+    }
+}

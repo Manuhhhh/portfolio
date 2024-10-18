@@ -1,0 +1,126 @@
+<footer>
+  <div class="foot-social-container">
+    <div class="foot-container-line"></div>
+
+    <img
+      class="foot-social-container-svg whatsapp"
+      src="/footer/whatsapp_logo.svg"
+      alt="Whatsapp logo"
+    />
+
+    <img
+      class="foot-social-container-svg"
+      src="/footer/gmail_logo.svg"
+      alt="Gmail logo"
+    />
+
+    <img
+      class="foot-social-container-svg"
+      src="/footer/linkedin_logo.svg"
+      alt="LinkedIn logo"
+    />
+
+    <div class="foot-container-line2"></div>
+  </div>
+
+  <div class="foot-info-container">
+    <p>manuelbadillabustelo@gmail.com | +54 2920 284543</p>
+    <p class="foot-copy">
+      © 2024 Manuel Badilla Bustelo - Todos los derechos reservados
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3f3d56;
+    gap: 10px;
+    .foot-social-container {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      width: 100%;
+      .foot-container-line {
+        background-color: #ee8325;
+
+        width: 45%;
+        height: 2px;
+        margin-top: 15px;
+        background: linear-gradient(
+          90deg,
+          #ee8325 50%,
+          rgba(0, 212, 255, 0) 100%
+        );
+      }
+
+      .foot-social-container-svg {
+        background-color: #fffcff;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+      }
+
+      .whatsapp {
+        padding: 4px;
+      }
+
+      .foot-container-line2 {
+        margin-top: 15px;
+        width: 45%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 212, 255, 0) 0%,
+          #ee8325 50%
+        );
+      }
+    }
+  }
+
+  .foot-info-container {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .foot-copy {
+      font-size: 0.6rem;
+      align-self: flex-end;
+      margin: 5px;
+    }
+
+    p {
+      color: #fffcff;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    .foot-info-container {
+      p {
+        font-size: 0.8em;
+      }
+    }
+
+    .foot-copy {
+      font-size: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .foot-info-container {
+      p {
+        font-size: 0.6em;
+      }
+    }
+
+    .foot-copy {
+      font-size: 0.4rem;
+    }
+  }
+</style>
