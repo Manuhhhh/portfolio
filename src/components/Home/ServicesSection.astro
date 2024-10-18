@@ -68,6 +68,25 @@
   </div>
 </section>
 
+<script>
+  const handleScroll = () => {
+    const cardsContainer: HTMLDivElement | null = document.querySelector(
+      ".services-wrapper-container"
+    );
+    const scrollY = window.scrollY || window.scrollY;
+
+    if (!cardsContainer) return;
+
+    const sectionOffset = cardsContainer.offsetTop - 57;
+
+    if (scrollY + window.innerHeight > sectionOffset) {
+      cardsContainer.classList.add("show-services-wrapper");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+</script>
+
 <style>
   #services {
     background-color: #3f3d56;
@@ -202,18 +221,18 @@
     opacity: 1 !important;
     transform: translateY(0) !important;
   }
-
   .services-wrapper-card[for="c1"] {
-    background-image: url("../../assets/images/else/programming.jpg");
+    background-image: url("../../../public/services/programming.jpg");
+    background-color: #ee8325;
   }
   .services-wrapper-card[for="c2"] {
-    background-image: url("../../assets/images/else/management.jpg");
+    background-image: url("../../../public/services/management.jpg");
   }
   .services-wrapper-card[for="c3"] {
-    background-image: url("../../assets/images/else/web.jpg");
+    background-image: url("../../../public/services/web.jpg");
   }
   .services-wrapper-card[for="c4"] {
-    background-image: url("../../assets/images/else/comunication.jpg");
+    background-image: url("../../../public/services/comunication.jpg");
   }
 
   @media screen and (min-width: 1081px) {
