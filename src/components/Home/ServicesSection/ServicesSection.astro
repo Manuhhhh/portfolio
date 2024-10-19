@@ -1,0 +1,86 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+import ServicesWrapper from "./ServicesWrapper.astro";
+---
+
+<section id="services">
+  <h2 class="services-title">Mis Servicios</h2>
+  <ServicesWrapper>
+    <ServiceCard
+      title="DESARROLLO DE SOFTWARE Y SCRIPTS" 
+      image="/services/programming.jpg"
+      number={1}
+    >
+      <p>Analizando la <b>intención</b> de mi cliente, determino soluciones <b>innovadoras</b> y <b>eficientes</b> en forma de código.</p>
+    </ServiceCard>
+    
+    <ServiceCard
+      title="GESTIÓN DE PROYECTOS" 
+      image="/services/management.jpg"
+      number={2}
+    >
+      <p>Desde la <b>planificación</b> inicial hasta la entrega final, priorizo una gestión <b>efectiva</b> del proceso de <b>materialización</b> de la idea del cliente.</p>
+    </ServiceCard>
+
+    <ServiceCard
+      title="DESARROLLO WEB"
+      image="/services/web.jpg"
+      number={3}
+    >
+      <p>Transformo tus ideas en sitios web <b>cautivadores</b> y <b>funcionales</b> con enfoque <b>personalizado</b> y tecnologías <b>modernas.</b></p>  
+    </ServiceCard>
+
+    <ServiceCard
+      title="COMUNICACIÓN EFECTIVA" 
+      image="/services/comunication.jpg"
+      number={4}
+    >
+     <p>Busco comunicar de la forma mas <b>clara</b> y <b>precisa</b>, para poder cumplir con las <b>expectativas</b> del cliente y realizar trabajos de los que poder estar <b>satisfecho.</b></p>
+    </ServiceCard>
+  </ServicesWrapper>
+</section>
+
+<style>
+  #services {
+    padding: 0 1rem;
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f3d56;
+  }
+
+  .services-title {
+    color: #ee8325;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: #cacaca;
+    text-decoration-style: dashed;
+    font-weight: 700;
+    text-decoration-thickness: 8px;
+    margin-bottom: 1rem;
+  }
+
+</style>
+
+<script>
+  const handleScroll = () => {
+    const cardsContainer: HTMLDivElement | null = document.querySelector(
+      ".services-wrapper-container"
+    );
+    const scrollY = window.scrollY || window.scrollY;
+
+    if (!cardsContainer) return;
+
+    const sectionOffset = cardsContainer.offsetTop - 57;
+
+    if (scrollY + window.innerHeight > sectionOffset) {
+      cardsContainer.classList.add("show-services-wrapper");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+</script>

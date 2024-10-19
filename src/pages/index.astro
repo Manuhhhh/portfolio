@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Layout/Header.astro";
 import LoadingScreen from "../components/Layout/LoadingScreen.astro";
 import MainSection from "../components/Home/MainSection.astro";
-import ServicesSection from "../components/Home/ServicesSection.astro";
-import AboutMe from "../components/Home/AboutMe.astro";
+import ServicesSection from "@components/Home/ServicesSection/ServicesSection.astro";
+import InterestsSection from "@/components/Home/InterestsSection/InterestsSection.astro";
 import Footer from "../components/Layout/Footer.astro";
 ---
 
@@ -13,6 +13,6 @@ import Footer from "../components/Layout/Footer.astro";
   <Header />
   <MainSection />
   <ServicesSection />
-  <AboutMe />
+  <InterestsSection />
   <Footer />
 </Layout>

@@ -2,7 +2,7 @@
   <div class="front">
     <div class="front-text">
       <h4 class="front-title">Manuel Badilla Bustelo</h4>
-      <p>Desarrollador de páginas web y software</p>
+      <p>Desarrollador de <b>software</b> y diseñador de <b>páginas web.</b></p>
     </div>
     <img alt="Web developer" id="dev" src="/web_developer.svg" />
   </div>
@@ -16,7 +16,7 @@
     display: flex;
     background-position: center top;
     height: 100dvh;
-    background-color: var(--baby-powder);
+    background-color: #ffffff;
     overflow: hidden;
   }
 
@@ -27,99 +27,68 @@
     justify-content: center;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    #dev {
-      width: 30%;
-    }
+    flex-direction: column;
   }
 
+  #dev {
+      width: 80%;
+  }
+
+  .front-text {
+    color: #3f3d56;
+    font-weight: 400;
+    text-wrap: pretty;
+  }
   .front-title {
-    color: var(--gris-azulado-extra);
-    font-size: 4em;
-    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
     text-decoration: underline;
     text-decoration-color: #cacaca;
     text-decoration-style: dashed;
     text-decoration-thickness: 5px;
   }
 
-  .front-description {
-    color: #3f3d56;
-    font-family: "Poppins", sans-serif;
-    font-size: 2em;
-    text-wrap: pretty;
-    max-width: 750px;
-  }
-
-  @media screen and (max-width: 1546px) {
-    .front-title {
-      font-size: 2.6em;
+  .front-text {
+      font-size: .9rem;
     }
 
-    .front-description {
-      font-size: 1.8em;
-    }
-  }
-
-  @media screen and (max-width: 1350px) {
-    .front-title {
-      font-size: 2.6em;
-    }
-
-    .front-description {
-      font-size: 1.8em;
-    }
-  }
-
-  @media screen and (max-width: 1000px) {
-    .front-title {
-      font-size: 2rem;
-    }
-
-    .front-description {
-      font-size: 1.6rem;
-    }
-
-    #dev {
-      height: 40vh;
-      max-width: 80%;
-      width: auto !important;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    .front-title {
-      font-size: 1.5rem;
-    }
-
-    .front-description {
-      font-size: 1.3rem;
-    }
-  }
-
-  @media screen and (max-width: 550px) {
-    .front-title {
-      font-size: 1.2rem;
-    }
-
-    .front-description {
-      font-size: 0.9rem;
-    }
-  }
-
-  @media screen and (max-height: 550px) {
-    .front {
-      margin-top: 58px;
-      margin-bottom: 0;
+  @media screen and (min-width: 500px) {
+    .front-text {
+      font-size: 1rem;
     }
 
     .front-title {
       font-size: 1.4rem;
     }
+  }
 
-    .front-description {
-      font-size: 1rem;
+  @media screen and (min-width: 682px) {
+    #dev {
+      width: 30%;
+    }
+
+    .front {
+      flex-direction: row;
+    }
+
+    .front-text {
+      font-size: 1.4rem;
+    }
+
+    .front-title {
+      font-size: 1.8rem;
     }
   }
+
+@media screen and (min-width: 1024px) {
+  .front-text {
+    font-size: 1.6rem;
+  }
+
+  .front-title {
+    font-size: 2.2rem;
+  }
+}
+
+
 </style>

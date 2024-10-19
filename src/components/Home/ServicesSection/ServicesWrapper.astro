@@ -1,0 +1,17 @@
+---
+const { children } = Astro.props;
+---
+
+<div class="services-wrapper">
+    <slot />
+</div>
+
+<style>
+    .services-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        position: relative;
+    }
+</style>

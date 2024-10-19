@@ -1,0 +1,166 @@
+---
+interface Props {
+    title: string;
+    image: string;
+    number?: number;
+    alt?: string;
+}
+
+const { title, image, alt, number } = Astro.props;
+---
+
+
+<input type="radio" class="services-wrapper-checkbox" name="slide" />
+<label for="services-wrapper-checkbox" class="services-wrapper-label">
+    <div class="services-wrapper-card">
+        <div class="services-wrapper-row">
+            <img src={image} alt={alt || 'Imágen'} class="services-wrapper-img" />
+            <div class="services-wrapper-info">
+                { number && <div class="services-wrapper-number">{ number }</div> }
+                <div class="services-wrapper-text">
+                    <h4>{ title }</h4>
+                    <slot />
+                </div>
+            </div>
+        </div>
+    </div>
+</label>
+
+<style>
+    .services-wrapper-card {
+        width: 100%;
+        height: fit-content;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .services-wrapper-info {
+        display: inline-flex;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 80px;
+
+    }
+
+    .services-wrapper-row {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .services-wrapper-label {
+        position: relative;
+    }
+
+    .services-wrapper-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        filter: brightness(0.5);
+    }
+
+    .services-wrapper-number {
+        background-color: #ee8325;
+        color: #ffffff;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        font-weight: 600;
+        flex-grow: 1;
+        border-radius: 100%;
+    }
+
+    @media screen and (max-width: 600px) {
+        .services-wrapper-checkbox {
+            width: 100%;
+            height: 0;
+            opacity: 1;
+            position: relative;
+            margin-top: .5rem;
+        }
+
+        .services-wrapper-label {
+            margin-bottom: .5rem;
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+        }
+
+        .services-wrapper-checkbox::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: transparent;
+            z-index: 10;
+            transition: all .6s cubic-bezier(.28,-0.03,0,.99);
+        }
+
+        .services-wrapper-checkbox:checked::after {
+            background-color: transparent;
+            height: 300px;
+        }
+
+        .services-wrapper-checkbox:checked + .services-wrapper-label .services-wrapper-row {
+            height: 300px;
+
+        }
+        
+        .services-wrapper-checkbox:checked + .services-wrapper-label .services-wrapper-row .services-wrapper-text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .services-wrapper-checkbox:hover + .services-wrapper-label .services-wrapper-text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .services-wrapper-row {
+            display: flex;
+            align-items: start;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: all .6s cubic-bezier(.28,-0.03,0,.99);
+
+            .services-wrapper-text {
+                display: flex;
+                user-select: all;
+                pointer-events: none;
+                flex-direction: column;
+                justify-content: center;
+                padding-right: 15px;
+                height: fit-content;
+                max-height: 80px;
+                padding: 15px 0;
+                width: calc(100% - 80px);
+                color: #ffffff;
+                height: 80px;
+                transform: translateY(100%);
+                opacity: 0;
+                transition: all .3s ease-in-out;
+                text-wrap: wrap;
+                word-break: normal;
+
+                h4 {
+                    font-size: 1rem;
+                    margin-bottom: 5px;
+                    font-weight: 500;
+                }
+                p {
+                    font-size: .8rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+</style>
